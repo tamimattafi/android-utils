@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MvpUtils</string>
+    <string name="something_went_wrong">Something went wrong!</string>
+    <string name="choose_application">Choose Application</string>
+</resources>
