@@ -71,17 +71,14 @@ object FileUtils {
 
     object Paths {
 
-        val AUTHORITY = "ru.zennex.journal.provider"
-
         val DOCUMENTS_DIR = "documents"
-
 
         fun isLocal(url: String?): Boolean {
             return url != null && !url.startsWith("http://") && !url.startsWith("https://")
         }
 
-        fun isLocalStorageDocument(uri: Uri): Boolean {
-            return AUTHORITY == uri.authority
+        fun Context.isLocalStorageDocument(uri: Uri): Boolean {
+            return (applicationContext.packageName + ".provider") == uri.authority
         }
 
         fun isExternalStorageDocument(uri: Uri): Boolean {
